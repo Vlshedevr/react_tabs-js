@@ -4,11 +4,11 @@ export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
   const curentTab = tabs.find(tab => tab.id === activeTabId) || tabs[0];
 
   function idDetector(curentClick) {
-    if (curentClick === activeTabId) {
-      return activeTabId;
+    if (curentClick === curentTab.id) {
+      return;
     }
 
-    return onTabSelected(curentClick);
+    onTabSelected(curentClick);
   }
 
   return (
